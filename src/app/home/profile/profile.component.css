@@ -1,0 +1,29 @@
+.a-left-right{
+    animation: left-right 1s ease-in-out;
+}
+
+.a-right-left{
+    animation: right-left 1s ease-in-out;
+}
+
+@keyframes left-right{
+    0% {
+        transform: translatex(-6em);
+        opacity: 0;
+      }
+    100% {
+        transform: translatex(0em);
+        opacity: 100;
+      }
+}
+
+@keyframes right-left{
+    0% {
+        transform: translatex(6em);
+        opacity: 0;
+      }
+    100% {
+        transform: translatex(0em);
+        opacity: 100;
+      }
+}
