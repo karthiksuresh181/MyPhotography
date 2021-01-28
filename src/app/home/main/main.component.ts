@@ -23,6 +23,9 @@ export class MainComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.imageService.get_image_set().subscribe(data => {
+      this.imageData = data;
+  });
   }
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event){
@@ -33,10 +36,7 @@ export class MainComponent implements OnInit {
       }
     }else if(yOffset>600 && yOffset<700){
       if(!this.dynamicImageComponent1.length){
-        this.imageService.get_image_set().subscribe(data => {
-            this.imageData = data;
-            this.load_image_component(this.dynamicImageComponent1, this.imageData["set_1"]);
-        });
+        this.load_image_component(this.dynamicImageComponent1, this.imageData["set_1"]);
       }
     }else if(yOffset>1000 && yOffset<1100){
       if(!this.dynamicImageComponent2.length){

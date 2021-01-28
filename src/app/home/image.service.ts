@@ -11,6 +11,6 @@ export class ImageService {
   constructor(private http: HttpClient) { }
 
   public get_image_set(): Observable<any>{
-    return this.http.get("../../assets/imageData.json");
+    return this.http.get("assets/imageData.json");
   }
 }
