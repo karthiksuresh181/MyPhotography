@@ -1,5 +1,8 @@
 import { Component, ViewContainerRef, ComponentFactoryResolver, HostListener, OnInit, ViewChild } from '@angular/core';
+
 import { ProfileComponent } from '../profile/profile.component';
+import { ImageComponent } from '../image/image.component';
+import { ImageService } from '../image.service';
 
 @Component({
   selector: 'app-main',
@@ -8,9 +11,15 @@ import { ProfileComponent } from '../profile/profile.component';
 })
 export class MainComponent implements OnInit {
   @ViewChild('dynamicProfileComponent', { read: ViewContainerRef}) dynamicProfileComponent: ViewContainerRef;
+  @ViewChild('dynamicImageComponent1', { read: ViewContainerRef}) dynamicImageComponent1: ViewContainerRef;
+  @ViewChild('dynamicImageComponent2', { read: ViewContainerRef}) dynamicImageComponent2: ViewContainerRef;
+  @ViewChild('dynamicImageComponent3', { read: ViewContainerRef}) dynamicImageComponent3: ViewContainerRef;
+
+  private imageData: any;
+  
   constructor(
-    private vcr: ViewContainerRef,
-    private cfr: ComponentFactoryResolver
+    private cfr: ComponentFactoryResolver,
+    private imageService: ImageService
   ) { }
 
   ngOnInit(): void {
@@ -22,12 +31,30 @@ export class MainComponent implements OnInit {
       if(!this.dynamicProfileComponent.length){
         this.load_profile_component();
       }
+    }else if(yOffset>600 && yOffset<700){
+      if(!this.dynamicImageComponent1.length){
+        this.imageService.get_image_set().subscribe(data => {
+            this.imageData = data;
+            this.load_image_component(this.dynamicImageComponent1, this.imageData["set_1"]);
+        });
+      }
+    }else if(yOffset>1000 && yOffset<1100){
+      if(!this.dynamicImageComponent2.length){
+        this.load_image_component(this.dynamicImageComponent2, this.imageData["set_2"]);
+      }
     }
   }
   
-  async load_profile_component(){
+  load_profile_component(){
     const componentFactory = this.cfr.resolveComponentFactory(ProfileComponent);
     this.dynamicProfileComponent.clear();
-    const dynamicComponent = <ProfileComponent>this.dynamicProfileComponent.createComponent(componentFactory).instance;
+    <ProfileComponent>this.dynamicProfileComponent.createComponent(componentFactory).instance;
+  }
+
+  load_image_component(dynamicComponent, data){
+    const componentFactory = this.cfr.resolveComponentFactory(ImageComponent);
+    dynamicComponent.clear();
+    const _component = <ImageComponent>dynamicComponent.createComponent(componentFactory).instance;
+    _component.data = data;
   }
 }

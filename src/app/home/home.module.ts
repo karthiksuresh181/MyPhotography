@@ -7,7 +7,7 @@ import { MainComponent } from './main/main.component';
 @NgModule({
   declarations: [
     WelcomeComponent,
-    MainComponent
+    MainComponent,
   ],
   imports: [
     CommonModule
