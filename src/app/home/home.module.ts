@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WelcomeComponent } from './welcome/welcome.component';
 import { MainComponent } from './main/main.component';
-
+import { WelcomeComponent } from './welcome/welcome.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
-    WelcomeComponent,
     MainComponent,
+    WelcomeComponent,
+    CarouselComponent
   ],
   imports: [
     CommonModule

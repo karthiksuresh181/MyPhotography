@@ -1,10 +1,3 @@
-<app-welcome></app-welcome>
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
-<ng-template #dynamicProfileComponent></ng-template>
-<ng-template #dynamicImageComponent1></ng-template>
-<ng-template #dynamicImageComponent2></ng-template>
-<ng-template #dynamicImageComponent3></ng-template>
-
 <ng-template #content let-modal>
     <div class="modal-header">
       <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
@@ -17,7 +10,7 @@
         <div class="form-group">
           <label for="dateOfBirth">Date of birth</label>
           <div class="input-group">
-            <!-- <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker"> -->
+            <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
             <div class="input-group-append">
               <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
             </div>

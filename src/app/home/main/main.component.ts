@@ -1,8 +1,10 @@
 import { Component, ViewContainerRef, ComponentFactoryResolver, HostListener, OnInit, ViewChild } from '@angular/core';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 import { ProfileComponent } from '../profile/profile.component';
 import { ImageComponent } from '../image/image.component';
 import { ImageService } from '../image.service';
+import { CarouselComponent } from '../carousel/carousel.component'
 
 @Component({
   selector: 'app-main',
@@ -16,10 +18,12 @@ export class MainComponent implements OnInit {
   @ViewChild('dynamicImageComponent3', { read: ViewContainerRef}) dynamicImageComponent3: ViewContainerRef;
 
   private imageData: any;
+  closeResult = '';
   
   constructor(
     private cfr: ComponentFactoryResolver,
-    private imageService: ImageService
+    private imageService: ImageService,
+    private modalService: NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -57,4 +61,23 @@ export class MainComponent implements OnInit {
     const _component = <ImageComponent>dynamicComponent.createComponent(componentFactory).instance;
     _component.data = data;
   }
+
+  open(content) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+
 }
