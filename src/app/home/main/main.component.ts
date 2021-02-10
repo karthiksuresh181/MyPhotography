@@ -3,7 +3,6 @@ import { Component, ViewContainerRef, ComponentFactoryResolver, HostListener, On
 import { ProfileComponent } from '../profile/profile.component';
 import { ImageComponent } from '../image/image.component';
 import { ImageService } from '../image.service';
-import { CarouselComponent } from '../carousel/carousel.component'
 
 @Component({
   selector: 'app-main',

@@ -3,7 +3,7 @@
         <h2 class="title text-center">My Work</h2>
         <div class="grid">
             <ng-container *ngFor="let img of data">
-                <div class="item {{img.display_properties}}" loading="lazy" style="background-image: url({{img.url}});"></div>
+                <div class="item {{img.display_properties}} img-left-right" loading="lazy" style="background-image: url({{img.url}});"></div>
             </ng-container>
         </div>
     </div>
