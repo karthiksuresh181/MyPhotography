@@ -1,15 +1,9 @@
 <div class="section section-dark">
     <div class="container">
-        <div class="row">
-            <div class="col-md">
-                <img class="img-rounded img-responsive" src={{data.i_1}}>
-            </div>
-            <div class="col-md">
-                <img class="img-rounded img-responsive" src={{data.i_2}}>
-            </div>
-            <div class="col-md">
-                <img class="img-rounded img-responsive" src={{data.i_3}}>
-            </div>
+        <div class="grid">
+            <ng-container *ngFor="let img of data">
+                <div class="item {{img.display_properties}}" loading="lazy" style="background-image: url({{img.url}});"></div>
+            </ng-container>
         </div>
     </div>
 </div>

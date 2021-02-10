@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { KeyValuePipe, KeyValue} from '@angular/common'
 
 @Component({
   selector: 'app-image',
@@ -6,10 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./image.component.scss']
 })
 export class ImageComponent implements OnInit {
-  @Input() data: any;
+  @Input() data: any; 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

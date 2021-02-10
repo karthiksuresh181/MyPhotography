@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { MainComponent } from './main/main.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { ImageComponent } from './image/image.component';
 
 @NgModule({
   declarations: [
     MainComponent,
     WelcomeComponent,
+    ImageComponent,
     CarouselComponent
   ],
   imports: [

@@ -1,17 +1,21 @@
+[{
+    "url": "assets/img/display_pictures/955766df-b931-4351-bcab-ab28a823b7db.jpg",
+    "display_properties": "item--full"
+},
 {
-    "set_1": {
-        "i_1": "assets/img/display_pictures/955766df-b931-4351-bcab-ab28a823b7db.jpg",
-        "i_2": "assets/img/display_pictures/b3969c02-faab-4566-a24f-7619987b9090.jpg",
-        "i_3": "assets/img/display_pictures/1ae71644-8bb5-4ea5-b1be-52ae999929f6.jpg"
-    },
-    "set_2": {
-        "i_1": "assets/img/display_pictures/58ab654c-e98b-4af5-baad-2be57a54a97d.jpg",
-        "i_2": "assets/img/display_pictures/163c505b-230b-4991-beae-9f71bb3f8711.jpg",
-        "i_3": "assets/img/display_pictures/a253477c-6511-493d-910c-dbb2f43bb8c9.jpg"
-    },
-    "set_3": {
-        "i_1": "../../../assets/img/display_pictures/",
-        "i_2": "../../../assets/img/display_pictures/",
-        "i_3": "../../../assets/img/display_pictures/"
-    }
+    "url": "assets/img/display_pictures/955766df-b931-4351-bcab-ab28a823b7db.jpg",
+    "display_properties": "item--large"
+},
+{
+    "url": "assets/img/display_pictures/955766df-b931-4351-bcab-ab28a823b7db.jpg",
+        "display_properties": "item--medium"
+},
+{
+    "url": "assets/img/display_pictures/955766df-b931-4351-bcab-ab28a823b7db.jpg",
+        "display_properties": ""
+},
+{
+    "url": "assets/img/display_pictures/955766df-b931-4351-bcab-ab28a823b7db.jpg",
+        "display_properties": ""
 }
+]
