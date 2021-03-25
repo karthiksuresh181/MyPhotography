@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { KeyValuePipe, KeyValue} from '@angular/common'
 
 @Component({
   selector: 'app-image',

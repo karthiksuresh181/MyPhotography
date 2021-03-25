@@ -30,9 +30,9 @@ export class MainComponent implements OnInit {
   }
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event){
-    console.log("Window InnerHeight: ", window.innerHeight)
-    console.log("window.scrollY: ", window.scrollY)
-    console.log("offsetHeight", document.body.offsetHeight)
+    // console.log("Window InnerHeight: ", window.innerHeight)
+    // console.log("window.scrollY: ", window.scrollY)
+    // console.log("offsetHeight", document.body.offsetHeight)
 
     if((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight) {
       if(!this.dynamicProfileComponent.length){
