@@ -3,7 +3,6 @@ import { Component, ViewContainerRef, ComponentFactoryResolver, HostListener, On
 import { ProfileComponent } from '../profile/profile.component';
 import { ImageComponent } from '../image/image.component';
 import { ImageService } from '../image.service';
-import { FeedbackComponent } from '../feedback/feedback.component';
 
 @Component({
   selector: 'app-main',
@@ -13,7 +12,6 @@ import { FeedbackComponent } from '../feedback/feedback.component';
 export class MainComponent implements OnInit {
   @ViewChild('dynamicProfileComponent', { read: ViewContainerRef}) dynamicProfileComponent: ViewContainerRef;
   @ViewChild('dynamicImageComponent', { read: ViewContainerRef}) dynamicImageComponent: ViewContainerRef;
-  @ViewChild('dynamicFeedbackComponent', { read: ViewContainerRef}) dynamicFeedbackComponent: ViewContainerRef;
 
   private imageData: any;
   closeResult = '';
@@ -39,8 +37,6 @@ export class MainComponent implements OnInit {
         this.load_profile_component();
       }else if(!this.dynamicImageComponent.length){
         this.load_image_component(this.dynamicImageComponent, this.imageData);
-      }else if(!this.dynamicFeedbackComponent.length){
-        this.load_feedback_component(); 
       }
     }
   }
@@ -49,12 +45,6 @@ export class MainComponent implements OnInit {
     const componentFactory = this.cfr.resolveComponentFactory(ProfileComponent);
     this.dynamicProfileComponent.clear();
     <ProfileComponent>this.dynamicProfileComponent.createComponent(componentFactory).instance;
-  }
-
-  load_feedback_component(){
-    const componentFactory = this.cfr.resolveComponentFactory(FeedbackComponent);
-    this.dynamicFeedbackComponent.clear();
-    <FeedbackComponent>this.dynamicFeedbackComponent.createComponent(componentFactory).instance;
   }
 
   load_image_component(dynamicComponent, data){
